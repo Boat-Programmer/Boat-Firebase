@@ -43,7 +43,8 @@ export default function Home() {
   return (
     <Layout>
       <Head>
-
+        <title>Boat App</title>
+        <link rel="icon" href="/day.svg" />
       </Head>
       <div className="top-section">
         <p>สถานะอุณหภูมิห้องของ Boat</p>
