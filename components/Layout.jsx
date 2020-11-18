@@ -21,7 +21,10 @@ function Layout({ children }) {
         <div className="container-fluid">{children}</div>
         <div className="credit">
           🌈 Design by{" "}
-          <a target="_blank" href="https://github.com/mrtompkin18">
+          <a
+            target="_blank"
+            href="https://github.com/Boat-Programmer/Boat-Firebase"
+          >
             Boat
           </a>
         </div>
