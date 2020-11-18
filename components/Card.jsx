@@ -22,7 +22,7 @@ function Card({ type, title, number = 0 }) {
         case "humidty":
           return "/humidity.png";
         case "fahrenheit":
-          return "/Cloud.png";
+          return "/cloud.png";
       }
     };
 
