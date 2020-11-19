@@ -39,7 +39,7 @@ function Card({ type, title, number = 0, updated }) {
             </div>
             <div className="card-type-updated">
               อัพเดตล่าสุด{" "}
-              {moment(updated).locale("th").format("DD-MM-YYYY HH:MM a")}
+              {moment(updated).format("DD-MM-YYYY HH:MM a")}
             </div>
           </div>
         </div>
