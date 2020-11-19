@@ -38,7 +38,8 @@ function Card({ type, title, number = 0, updated }) {
               {numeral(number).format("0.0[0000]")}
             </div>
             <div className="card-type-updated">
-              อัพเดตล่าสุด {moment(updated).locale("th").format("LLLL a")}
+              อัพเดตล่าสุด{" "}
+              {moment(updated).locale("th").format("DD-MM-YYYY HH:MM a")}
             </div>
           </div>
         </div>
