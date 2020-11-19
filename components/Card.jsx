@@ -25,6 +25,8 @@ function Card({ type, title, number = 0, updated }) {
     }
   };
 
+  const date = Date.now();
+
   return (
     <div className={cardStyle}>
       <div className="row">
@@ -39,7 +41,7 @@ function Card({ type, title, number = 0, updated }) {
             </div>
             <div className="card-type-updated">
               อัพเดตล่าสุด{" "}
-              {moment(updated).format("DD-MM-YYYY HH:MM a")}
+              {updated}
             </div>
           </div>
         </div>
