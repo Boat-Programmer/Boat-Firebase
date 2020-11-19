@@ -95,7 +95,7 @@ export default function Home() {
       <div className="top-section">
         <img className="logo" src="/cloudy-logo.png" />
         <h1>Boat App</h1>
-        <p>สถานะอุณหภูมิห้องของ Boat</p>
+        <p>สถานะอุณหภูมิห้องของ Boat อัพเดททุก 5 นาที</p>
         {renderClokSection()}
       </div>
       {renderCardSection()}
