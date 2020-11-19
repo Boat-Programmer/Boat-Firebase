@@ -1,7 +1,9 @@
 import React from "react";
 
+import dayjs from "dayjs";
+import "dayjs/locale/th";
+
 import numeral from "numeral";
-import moment from "moment";
 
 function Card({ type, title, number = 0, updated }) {
   var cardStyle = "card-number";
@@ -25,8 +27,6 @@ function Card({ type, title, number = 0, updated }) {
     }
   };
 
-  const date = Date.now();
-
   return (
     <div className={cardStyle}>
       <div className="row">
@@ -41,7 +41,8 @@ function Card({ type, title, number = 0, updated }) {
             </div>
             <div className="card-type-updated">
               อัพเดตล่าสุด{" "}
-              {updated}
+              <br/>
+              {dayjs(updated).locale("th").format("DD MMMM YYYY HH:mm a")}
             </div>
           </div>
         </div>

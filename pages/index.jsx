@@ -27,7 +27,7 @@ export default function Home() {
     return (
       <div className="card-stats-section">
         <div className="row">
-          <div className="col-lg-4">
+          <div className="col-lg-4 mt-3">
             <Card
               type="temperature"
               title="อุณหภูมิ °C"
@@ -35,7 +35,7 @@ export default function Home() {
               updated={Updated}
             />
           </div>
-          <div className="col-lg-4">
+          <div className="col-lg-4 mt-3">
             <Card
               type="fahrenheit"
               title="อุณหภูมิ °F"
@@ -43,7 +43,7 @@ export default function Home() {
               updated={Updated}
             />
           </div>
-          <div className="col-lg-4">
+          <div className="col-lg-4 mt-3">
             <Card
               type="humidty"
               title="ความชื้น"
@@ -56,10 +56,9 @@ export default function Home() {
     );
   }
 
-  const renderClokSection = (props) => {
+  const renderClokSection = () => {
     const [date, setDate] = useState(new Date());
 
-    //Replaces componentDidMount and componentWillUnmount
     useEffect(() => {
       var timerID = setInterval(() => tick(), 1000);
 
