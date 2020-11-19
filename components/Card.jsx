@@ -31,13 +31,15 @@ function Card({ type, title, number = 0, updated }) {
         <div className="col-sm-4 mb-10">
           <img src={getIconType(type)} />
         </div>
-        <div className="col-lg-16 pl-4">
+        <div className="col-lg-8 pl-4">
           <div className="d-flex flex-column">
             <div className="card-type-title">{title}</div>
             <div className={cardStyleNumber}>
               {numeral(number).format("0.0[0000]")}
             </div>
-            <div className="card-type-updated">อัพเดตล่าสุด {updated} </div>
+            <div className="card-type-updated">
+              อัพเดตล่าสุด {moment(updated).locale('th').format('MMMM Do YYYY, h:mm:ss a')}
+            </div>
           </div>
         </div>
       </div>

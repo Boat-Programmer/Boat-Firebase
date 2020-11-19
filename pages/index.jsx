@@ -55,15 +55,48 @@ export default function Home() {
       </div>
     );
   }
+
+  const renderClokSection = (props) => {
+    const [date, setDate] = useState(new Date());
+
+    //Replaces componentDidMount and componentWillUnmount
+    useEffect(() => {
+      var timerID = setInterval(() => tick(), 1000);
+
+      return function cleanup() {
+        clearInterval(timerID);
+      };
+    });
+
+    const tick = () => {
+      setDate(new Date());
+    }
+
+    const result = date.toLocaleDateString("th-TH", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+      weekday: "long",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+    });
+
+    return (
+      <div>
+        <h2>{result}</h2>
+      </div>
+    );
+  }
+
   
   return (
     <Layout>
-      <Head>
-        <title>Boat App</title>
-        <link rel="icon" href="/cloud.png" />
-      </Head>
       <div className="top-section">
+        <img className="logo" src="/cloudy-logo.png" />
+        <h1>Boat App</h1>
         <p>สถานะอุณหภูมิห้องของ Boat</p>
+        {renderClokSection()}
       </div>
       {renderCardSection()}
     </Layout>
