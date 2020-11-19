@@ -1,8 +1,9 @@
+import * as React from 'react'
 import Head from 'next/head'
 
 function Layout({ children }) {
     return (
-      <div>
+      <React.Fragment>
         <Head>
           <meta httpEquiv="Content-Type" content="text/html;charset=UTF-8" />
           <meta
@@ -28,7 +29,7 @@ function Layout({ children }) {
             Boat
           </a>
         </div>
-      </div>
+      </React.Fragment>
     );
 }
 

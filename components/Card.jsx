@@ -1,32 +1,29 @@
 import React from "react";
+
 import numeral from "numeral";
 import moment from "moment";
 
-function Card({ type, title, number = 0 }) {
-
-  var cardStyle = "card-number"
-  if(type == "temperature") {
+function Card({ type, title, number = 0, updated }) {
+  var cardStyle = "card-number";
+  if (type == "temperature") {
     cardStyle = "card-number card-confirmed";
   }
   var cardStyleNumber = "card-type-number-temperature";
   if (type == "humidty") {
     cardStyleNumber = "card-type-number-humidity";
-  }
-  else if (type == "fahrenheit") {
+  } else if (type == "fahrenheit") {
     cardStyleNumber = "card-type-number-fahrenheit";
   }
-    const getIconType = (type) => {
-      switch (type) {
-        case "temperature":
-          return "/warm.png";
-        case "humidty":
-          return "/humidity.png";
-        case "fahrenheit":
-          return "/cloud.png";
-      }
-    };
-
-  
+  const getIconType = (type) => {
+    switch (type) {
+      case "temperature":
+        return "/warm.png";
+      case "humidty":
+        return "/humidity.png";
+      case "fahrenheit":
+        return "/cloud.png";
+    }
+  };
 
   return (
     <div className={cardStyle}>
@@ -40,9 +37,7 @@ function Card({ type, title, number = 0 }) {
             <div className={cardStyleNumber}>
               {numeral(number).format("0.0[0000]")}
             </div>
-            <div className="card-type-updated">
-              อัพเดตล่าสุด {moment().format("DD-MM-YYYY HH:MM")}{" "}
-            </div>
+            <div className="card-type-updated">อัพเดตล่าสุด {updated} </div>
           </div>
         </div>
       </div>
@@ -50,4 +45,4 @@ function Card({ type, title, number = 0 }) {
   );
 }
 
-export default React.memo(Card)
+export default React.memo(Card);
