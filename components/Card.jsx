@@ -4,27 +4,32 @@ import numeral from "numeral";
 
 function Card({ type, title, number = 0, updated }) {
   var cardStyle = "card-number";
-  if (type == "temperature") {
+  if (type == "temperature" && number > 30) {
     cardStyle = "card-number card-confirmed";
   }
+  
   var cardStyleNumber = "card-type-number-temperature";
   if (type == "humidty") {
     cardStyleNumber = "card-type-number-humidity";
   } else if (type == "fahrenheit") {
     cardStyleNumber = "card-type-number-fahrenheit";
   }
+
   const getIconType = (type) => {
-    switch (type) {
-      case "temperature":
-        return "/warm.png";
-      case "humidty":
-        return "/humidity.png";
-      case "fahrenheit":
-        return "/cloud.png";
+    if (type == "temperature" && number <= 30) {
+      return "/warm.png";
+    } else if (type == "temperature" && number >= 30) {
+      return "/air.png";
+    }
+    if (type == "humidty") {
+      return "/humidity.png";
+    }
+    if (type == "fahrenheit") {
+      return "/cloud.png";
     }
   };
 
-  const date = new Date(updated)
+  const date = new Date(updated);
 
   const Updated = date.toLocaleString("th-TH", {
     year: "numeric",
@@ -48,8 +53,7 @@ function Card({ type, title, number = 0, updated }) {
               {numeral(number).format("0.0[0000]")}
             </div>
             <div className="card-type-updated">
-              อัพเดตล่าสุด{" "}
-              <br/>
+              อัพเดตล่าสุด <br />
               {Updated}
             </div>
           </div>
