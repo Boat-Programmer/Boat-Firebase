@@ -1,8 +1,5 @@
 import React from "react";
 
-import dayjs from "dayjs";
-import "dayjs/locale/th";
-
 import numeral from "numeral";
 
 function Card({ type, title, number = 0, updated }) {
@@ -27,6 +24,17 @@ function Card({ type, title, number = 0, updated }) {
     }
   };
 
+  const date = new Date(updated)
+
+  const Updated = date.toLocaleString("th-TH", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    weekday: "long",
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+
   return (
     <div className={cardStyle}>
       <div className="row">
@@ -42,7 +50,7 @@ function Card({ type, title, number = 0, updated }) {
             <div className="card-type-updated">
               อัพเดตล่าสุด{" "}
               <br/>
-              {dayjs(updated).locale("th").format("DD MMMM YYYY HH:mm a")}
+              {Updated}
             </div>
           </div>
         </div>

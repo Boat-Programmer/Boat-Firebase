@@ -17,7 +17,8 @@
     "numeral": "^2.0.6",
     "react": "17.0.1",
     "react-dom": "17.0.1",
-    "sass": "^1.29.0"
+    "sass": "^1.29.0",
+    "uninstall": "0.0.0"
   },
   "engines": {
     "node": "12.16.3",
