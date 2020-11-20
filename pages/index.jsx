@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Head from 'next/head';
 
 import firebase from "./api/firebase";
 import Layout from "../components/Layout";
@@ -93,7 +92,7 @@ export default function Home() {
     <Layout>
       <div className="top-section">
         <img className="logo" src="/cloudy-logo.png" />
-        <h1>Boat App</h1>
+        <h1>B Cloud</h1>
         <p>สถานะอุณหภูมิห้องของ Boat อัพเดททุก 5 นาที</p>
         {renderClokSection()}
       </div>

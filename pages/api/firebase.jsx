@@ -1,6 +1,5 @@
 import firebase from "firebase";
 
-
 const firebaseProjectName = "my-boat-project-bc307";
 
 const config = {
