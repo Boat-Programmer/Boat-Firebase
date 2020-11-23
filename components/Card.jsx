@@ -48,7 +48,7 @@ function Card({ type, title, number = 0, updated }) {
             </div>
             <div className="card-type-updated">
               อัพเดตล่าสุด <br />
-              {dayjs(updated).locale("th").format("LLLL A")}
+              {dayjs(updated).locale("th").format("llll a")}
             </div>
           </div>
         </div>
