@@ -1,9 +1,9 @@
 import firebase from "firebase";
 
-const firebaseProjectName = "my-boat-project-bc307";
+const firebaseProjectName = "b-cloud-app";
 
 const config = {
-  apiKey: "WClSh85oPr2cf08hHUn7YejZ9IzSiXsqmSYGZQ9w",
+  apiKey: "AIzaSyDn2ythD5-lSEwPUWHKE3nxKMw6ctw49y0",
   authDomain: `${firebaseProjectName}.firebaseapp.com`,
   databaseURL: `https://${firebaseProjectName}.firebaseio.com`,
   projectId: `${firebaseProjectName}`,
