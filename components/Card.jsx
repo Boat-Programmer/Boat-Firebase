@@ -1,10 +1,10 @@
 import React from "react";
-import dayjs from 'dayjs'
+import dayjs from "dayjs";
+import localizedFormat from "dayjs/plugin/localizedFormat";
 import "dayjs/locale/th";
 import numeral from "numeral";
 
 function Card({ type, title, number = 0, updated }) {
-  
   var cardStyle = "card-number";
   if (type == "temperature" && number > 30) {
     cardStyle = "card-number card-confirmed";
@@ -31,7 +31,8 @@ function Card({ type, title, number = 0, updated }) {
     }
   };
 
-  const date = new Date(updated);
+  // const date = new Date(updated);
+  dayjs.extend(localizedFormat)
 
   return (
     <div className={cardStyle}>
@@ -47,7 +48,7 @@ function Card({ type, title, number = 0, updated }) {
             </div>
             <div className="card-type-updated">
               อัพเดตล่าสุด <br />
-              {dayjs(date).locale('th').format("LLLL")}
+              {dayjs(updated).locale("th").format("LLLL A")}
             </div>
           </div>
         </div>
