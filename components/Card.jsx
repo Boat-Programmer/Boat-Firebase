@@ -37,7 +37,7 @@ function Card({ type, title, number = 0, updated }) {
   return (
     <div className={cardStyle}>
       <div className="row">
-        <div className="col-sm-4 mb-10">
+        <div className="col-sm-4 mb-10 text-center">
           <img src={getIconType(type)} />
         </div>
         <div className="col-lg-8 pl-4">

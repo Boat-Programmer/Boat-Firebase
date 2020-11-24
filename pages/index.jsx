@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 
 import firebase from "./api/firebase";
 import Layout from "../components/Layout";
@@ -88,14 +88,16 @@ export default function Home() {
   }
   
   return (
-    <Layout>
-      <div className="top-section">
-        <img className="logo" src="/cloudy-logo.png" />
-        <h1>B Cloud</h1>
-        <p>สถานะอุณหภูมิห้องของ Boat อัพเดททุก 5 นาที</p>
-        {renderClokSection()}
-      </div>
-      {renderCardSection()}
-    </Layout>
+    <Fragment>
+      <Layout>
+        <div className="top-section">
+          <img className="logo" src="/cloudy-logo.png" />
+          <h1>B Cloud</h1>
+          <p>สถานะอุณหภูมิห้องของ Boat อัพเดททุก 5 นาที</p>
+          {renderClokSection()}
+        </div>
+        {renderCardSection()}
+      </Layout>
+    </Fragment>
   );
 }
